@@ -1,34 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flashcards App</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>플래시카드 앱</h1>
-  
-  <div>
-	<h2>단어 등록</h2>
-	<input type="number" id="pageNumber" placeholder="페이지 번호">
-	<textarea id="wordsInput" placeholder="단어와 뜻을 입력하세요. 예) 단어1:뜻1, 단어2:뜻2"></textarea>
-	<button onclick="registerMultipleWords()">등록</button>
+<h1>플래시카드 앱</h1>
 
-  </div>
+<!-- 초기 버튼 -->
+<div id="menu">
+  <button onclick="showSection('registerSection')">1. 단어 등록</button>
+  <button onclick="showSection('randomSection')">2. 모든 단어 무작위 보기</button>
+  <button onclick="showSection('pageSection')">3. 특정 페이지 보기</button>
+</div>
 
-  <div>
-    <h2>2. 모든 단어 무작위 보기</h2>
-    <button onclick="shuffleAndDisplayWords(10)">무작위로 10개 보기</button>
-    <div id="randomWords"></div>
-  </div>
+<!-- 단어 등록 -->
+<div id="registerSection" class="section" style="display: none;">
+  <h2>단어 등록</h2>
+  <input type="number" id="pageNumber" placeholder="페이지 번호">
+  <textarea id="wordsInput" placeholder="단어와 뜻을 입력하세요. 예) 단어1:뜻1, 단어2:뜻2"></textarea>
+  <button onclick="registerMultipleWords()">등록</button>
+</div>
 
-  <div>
-    <h2>3. 특정 페이지 보기</h2>
-    <div id="pageButtons"></div>
-    <div id="pageWords"></div>
-  </div>
+<!-- 무작위 단어 보기 -->
+<div id="randomSection" class="section" style="display: none;">
+  <h2>모든 단어 무작위 보기</h2>
+  <button onclick="shuffleAndDisplayWords(10)">무작위로 10개 보기</button>
+  <div id="randomWords"></div>
+</div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+<!-- 특정 페이지 보기 -->
+<div id="pageSection" class="section" style="display: none;">
+  <h2>특정 페이지 보기</h2>
+  <div id="pageButtons"></div>
+  <div id="pageWords"></div>
+</div>
