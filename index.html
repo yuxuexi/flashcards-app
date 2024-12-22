@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>플래시카드 앱</h1>
+  
+  <div>
+    <h2>1. 단어 등록</h2>
+    <input type="number" id="pageNumber" placeholder="페이지 번호">
+    <input type="text" id="word" placeholder="단어">
+    <input type="text" id="meaning" placeholder="뜻">
+    <button onclick="registerWord()">등록</button>
+  </div>
+
+  <div>
+    <h2>2. 모든 단어 무작위 보기</h2>
+    <button onclick="shuffleAndDisplayWords(10)">무작위로 10개 보기</button>
+    <div id="randomWords"></div>
+  </div>
+
+  <div>
+    <h2>3. 특정 페이지 보기</h2>
+    <div id="pageButtons"></div>
+    <div id="pageWords"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
